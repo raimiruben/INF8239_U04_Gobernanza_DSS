@@ -1,5 +1,3 @@
-# Decision record
-
 # Registro de decisión — Territorial Review DSS (sintético)
 
 **Decisión: REVIEW (revisar).** Se continúa únicamente hasta la auditoría de LAB12. El sistema no se usa para ninguna decisión mientras no cumpla las compuertas de `configs/governance.yml`.
