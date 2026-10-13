@@ -1,9 +1,11 @@
-purpose: REPLACE
-assisted_decision: REPLACE
-users: REPLACE
-affected_population: REPLACE
-owner: REPLACE
-non_predictive_alternative: REPLACE
-out_of_scope_use: REPLACE
-withdrawal_condition: REPLACE
-appeal_mechanism: REPLACE
+
+purpose: "Ordenar casos territoriales sintéticos según su riesgo estimado para que el equipo de revisión humana atienda primero los de mayor prioridad. El sistema solo prioriza la cola de revisión; no decide ni ejecuta ninguna acción."
+assisted_decision: "Qué casos revisa antes el equipo humano cuando no puede revisarlos todos. La persona revisora decide si se abre una intervención; el sistema solo propone el orden."
+users: "Revisores del equipo territorial, que reciben la lista priorizada y deciden el orden de atención, bajo la supervisión del propietario institucional."
+affected_population: "Las personas y comunidades representadas en los casos, en especial quienes el sistema deje al final de la cola y reciban atención tardía, con atención particular a los grupos protegidos y a las bandas de edad. En este ejercicio los datos son sintéticos."
+owner: "Dirección del programa de revisión territorial (propietario institucional), que responde por el uso, la política y el retiro del sistema."
+non_predictive_alternative: "Revisión humana por orden de llegada con criterios fijos y publicados, más un muestreo aleatorio de casos de baja prioridad. El modelo solo se justifica si supera esta alternativa en recall sin ampliar las brechas entre grupos."
+out_of_scope_use: "Intervención automática, decisión de elegibilidad y declaración de emergencia (prohibidos en configs/governance.yml), además del perfilado operativo o la inferencia sobre poblaciones reales."
+withdrawal_condition: "Se detiene el uso si en la revisión periódica el recall baja de 0,68, si la brecha de recall o de falsos positivos entre grupos supera 0,16, o si se detecta un uso fuera de alcance. Decide el propietario institucional y queda registrado."
+appeal_mechanism: "Cualquier persona afectada o revisora puede pedir una revisión humana independiente de la prioridad asignada. Un revisor distinto del original responde por escrito en un plazo de 10 días hábiles. El sistema no puede cerrar ni descartar un caso."
+
