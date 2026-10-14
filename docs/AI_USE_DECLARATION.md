@@ -1,48 +1,27 @@
-\# Declaración de uso de IA
+# Declaración de uso de IA
 
+**Herramienta:** Claude (Anthropic), asistente de IA usado en el chat de claude.ai durante el LAB11.
 
+**Finalidad:** guía paso a paso del laboratorio; explicación de los conceptos del manual y de las reglas que aplican los scripts del proyecto; redacción de los borradores de contenido de `student_inputs/lab11_impact.yml`, `student_inputs/stakeholders.csv`, `student_inputs/risk_register.csv` y `reports/lab11/DECISION_RECORD.md`; diagnóstico de un error del script `scripts/lab11_impact.py`.
 
-\*\*Herramienta:\*\* Claude (Anthropic), asistente de IA usado en el chat de claude.ai durante el LAB11.
+**Fragmentos afectados** (los borradores de la IA se adoptaron sin cambios):
+- `student_inputs/lab11_impact.yml`: los nueve campos son el borrador propuesto por la IA; no los modifiqué.
+- `student_inputs/stakeholders.csv`: beneficio, daño y participación de los cuatro actores son el borrador propuesto por la IA; no los modifiqué.
+- `student_inputs/risk_register.csv`: los escenarios, afectados, controles, responsables y evidencias de R01 a R08 son la propuesta de la IA, ajustada a la probabilidad, el impacto y el residual ya fijados en la plantilla; no modifiqué ningún riesgo.
+- `reports/lab11/DECISION_RECORD.md`: la estructura y el texto los propuso la IA, incluida la decisión REVIEW, que mantuve sin cambios.
+- `scripts/lab11_impact.py`: la corrección de la cadena de texto (una línea con `\n`) fue indicada por la IA y la apliqué manualmente en el editor.
 
+**Verificaciones humanas:**
+- Ejecuté las pruebas del proyecto (10 en verde al inicio, y 3 de impacto y privacidad al final) y el script de LAB11, y consulté su salida: `risk_register_scored.csv` y los tres riesgos prioritarios.
+- Consulté en el código (`impact.py`, `test_impact.py` y `lab11_impact.py`) cómo se calcula la prioridad (probabilidad por impacto) y qué valida el script.
+- Consulté los archivos del caso en los que se basaron los borradores: `README.md`, `docs/DATASET_CARD.md` y `configs/governance.yml`.
+- Comprobé con una búsqueda que no quedaban marcadores `REPLACE` en los archivos de LAB11.
 
+**Errores detectados y correcciones:**
+- El script `scripts/lab11_impact.py` del proyecto base tenía un error de sintaxis (una cadena de texto partida en varias líneas). La IA no lo advirtió al leer el script por primera vez y se detectó al ejecutarlo; se corrigió y quedó en un commit propio.
+- `rmf_summary.json` se genera con texto fijo: no mide controles reales, así que no se usó como evidencia de que los controles funcionan.
+- El script sobrescribe `DECISION_RECORD.md` en cada ejecución, por lo que el registro se escribió después de la última ejecución.
+- Varias evidencias del registro de riesgos figuran como "pendiente" o "por implementar" porque dependen de LAB12 y LAB13, y no se presentaron como existentes.
+- La primera versión de esta declaración (commit `38b3c0b`) se guardó con apartados sin completar y con caracteres de escape en los nombres de archivo. Se detectó con una búsqueda posterior y se corrigió en un commit nuevo.
 
-\*\*Finalidad:\*\* explicación de los conceptos del manual y de las reglas que aplican los scripts del proyecto; borradores de contenido para `student\\\_inputs/lab11\\\_impact.yml`, `student\\\_inputs/stakeholders.csv`, `student\\\_inputs/risk\\\_register.csv` y `reports/lab11/DECISION\\\_RECORD.md`; diagnóstico de un error del script `scripts/lab11\\\_impact.py`.
-
-
-
-\*\*Fragmentos afectados:\*\*
-
-\- `student\\\_inputs/lab11\\\_impact.yml`: los nueve campos partieron de un borrador de la IA. \[Escriba qué campos cambió o reescribió.]
-
-\- `student\\\_inputs/stakeholders.csv`: beneficio, daño y participación de los cuatro actores partieron de un borrador. \[Escriba qué cambió.]
-
-\- `student\\\_inputs/risk\\\_register.csv`: los escenarios, afectados, controles, responsables y evidencias de R01 a R08 partieron de una propuesta de la IA, ajustada a la probabilidad, el impacto y el residual ya fijados en la plantilla. \[Escriba qué riesgos modificó o sustituyó.]
-
-\- `reports/lab11/DECISION\\\_RECORD.md`: la estructura y el texto base los propuso la IA, incluida la decisión REVIEW. \[Escriba si mantuvo o cambió la decisión y por qué.]
-
-\- `scripts/lab11\\\_impact.py`: la corrección de la cadena de texto (una línea con `\\\\n`) fue indicada por la IA.
-
-
-
-\*\*Verificaciones humanas:\*\*
-
-\- Ejecuté las pruebas (10 en verde al inicio y 3 en verde de impacto y privacidad al final) y el script, y leí el resultado en `risk\\\_register\\\_scored.csv`.
-
-\- Comprobé en el código que la prioridad es probabilidad por impacto y que los tres riesgos prioritarios son R02, R01 y R07.
-
-\- Comprobé que no quedan marcadores `REPLACE` en los archivos entregados.
-
-\- \[Escriba qué más verificó usted: por ejemplo, si contrastó los escenarios con los datos y la política del caso.]
-
-
-
-\*\*Errores detectados y correcciones:\*\*
-
-\- El script `scripts/lab11\\\_impact.py` del proyecto base tenía un error de sintaxis (una cadena de texto partida en varias líneas). Se detectó al ejecutarlo; se corrigió y quedó en un commit propio.
-
-\- `rmf\\\_summary.json` se genera con texto fijo: no mide controles reales, así que no se usó como evidencia de que los controles funcionan.
-
-\- El script sobrescribe `DECISION\\\_RECORD.md` en cada ejecución, por lo que el registro se escribió después de la última ejecución.
-
-\- Varias evidencias del registro de riesgos figuran como "pendiente" o "por implementar" porque dependen de LAB12 y LAB13, y no se presentaron como existentes.
-
+**Responsabilidad:** asumo la responsabilidad sobre el contenido entregado.
