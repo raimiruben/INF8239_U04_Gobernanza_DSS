@@ -11,3 +11,4 @@ c1,c2,c3=st.columns(3); c1.metric("Accuracy",f"{result['metrics']['accuracy']:.3
 st.subheader("Métricas por grupo"); st.dataframe(result["by_group"],use_container_width=True)
 st.subheader("Puertas de calidad"); st.json(result["decision"])
 st.info("Acción humana: revisar evidencia, documentar la decisión y activar apelación o rollback cuando corresponda.")
+st.error("Decisión humana documentada: REVIEW. Las puertas automáticas pasan, pero el recall de G1 (0.653) está por debajo del mínimo de 0.68 y el soporte por grupo es pequeño. Ver docs/MODEL_CARD.md.")

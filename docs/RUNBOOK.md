@@ -1,8 +1,10 @@
-# Incident Runbook — complete after LAB13
+# Incident Runbook — Territorial Review DSS (sintético)
 
-1. Detection and classification: REPLACE
-2. Containment authority: REPLACE
-3. Evidence preservation: REPLACE
-4. Internal and affected-party communication: REPLACE
-5. Rollback or safe baseline: REPLACE
-6. Postmortem, owner and due date: REPLACE
+Roles según `student_inputs/raci.csv` (actividad "Incident response": Responsible = Data team, Accountable = Institutional owner, Consulted = Legal y Operator, Informed = Affected representatives).
+
+1. Detection and classification: Se detecta un incidente cuando una auditoría de equidad o el monitoreo muestra que la brecha de recall o de FPR supera 0,16, que el recall global baja de 0,68, o cuando el Operator o una persona afectada reporta un resultado dañino, una fuga de datos personales o un uso prohibido (decisión automática, elegibilidad o emergencia). El Data team registra la fecha, la señal y el alcance, y clasifica la gravedad: **alta** si hubo daño a personas, uso prohibido o datos personales expuestos; **media** si falla una puerta de equidad o desempeño sin daño confirmado; **baja** si es una falla técnica sin efecto en las decisiones.
+2. Containment authority: El Institutional owner (Accountable) puede suspender el sistema o devolverlo al estado REVIEW. El Data team ejecuta la contención y el Operator pasa a revisión manual de todos los casos mientras dure. Se consulta a Legal si hay datos personales o daño a personas.
+3. Evidence preservation: Antes de cambiar nada, el Data team guarda el informe de la auditoría (`reports/lab12/`, `reports/lab13/deployment_decision.json`), la versión del modelo, la configuración (`configs/governance.yml`), el commit de Git y los registros del incidente. No se sobrescriben informes previos.
+4. Internal and affected-party communication: El Data team informa al Institutional owner y al Operator de inmediato. Legal revisa el mensaje antes de enviarlo. Se informa a las personas afectadas o a sus representantes (Affected representatives) con lenguaje claro: qué pasó, qué casos pudieron verse afectados, qué se hizo y cómo pedir revisión humana o apelar. No se publican datos personales.
+5. Rollback or safe baseline: El sistema vuelve al estado REVIEW: la cola se atiende por orden de llegada con revisión humana, sin priorización del modelo, o se restaura la última versión aprobada. El sistema solo se reactiva cuando el Data team demuestra que las puertas pasan de nuevo y el Institutional owner lo aprueba por escrito.
+6. Postmortem, owner and due date: El Data team redacta el postmortem (modelo en `reports/lab13/INCIDENT_POSTMORTEM.md`) con causa, impacto, línea de tiempo y acciones correctivas con responsable y fecha. Responsable: Data team; aprobación: Institutional owner. Plazo: PROPUESTO 5 días hábiles desde la detección. (Confirmar o ajustar este plazo.)
