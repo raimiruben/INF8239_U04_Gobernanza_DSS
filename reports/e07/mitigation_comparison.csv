@@ -1,0 +1,5 @@
+variant,features,accuracy,recall,recall_G1,recall_G2,fpr_G1,fpr_G2,recall_gap,recall_gap_ci95,fpr_gap,train_seconds,gate_recall,gate_recall_gap,gate_fpr_gap,proposed_min_group_recall_ok
+baseline (zone + age_band),"zone, age_band, previous_incidents, infrastructure_score, exposure",0.719,0.717,0.653,0.791,0.25,0.375,0.138,0.01-0.31,0.125,0.119,True,True,True,False
+sin age_band,"zone, previous_incidents, infrastructure_score, exposure",0.725,0.717,0.653,0.791,0.231,0.375,0.138,0.01-0.32,0.144,0.02,True,True,True,False
+sin zone,"age_band, previous_incidents, infrastructure_score, exposure",0.725,0.707,0.653,0.767,0.173,0.5,0.114,0.01-0.30,0.327,0.019,True,True,False,False
+sin zone ni age_band,"previous_incidents, infrastructure_score, exposure",0.738,0.728,0.653,0.814,0.192,0.438,0.161,0.01-0.34,0.245,0.015,True,False,False,False
